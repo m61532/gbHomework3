@@ -62,11 +62,7 @@ public class gbTask3 {
     private static int[] invertBinaryArray(int[] binaryArray) {  //Task1
 
         for (int i = 0; i < binaryArray.length; i++) {
-            if (binaryArray[i] == 0) {
-                binaryArray[i] = 1;
-            } else {
-                binaryArray[i] = 0;
-            }
+            binaryArray[i] = binaryArray[i] == 1 ? 0 : 1;
         }
         return binaryArray;
     }
@@ -79,9 +75,7 @@ public class gbTask3 {
 
     private static void checkMultArrray(int[] randArray) {    //Task3
         for (int i = 0; i < randArray.length; i++) {
-            if (randArray[i] < 6) {
-                randArray[i] *= 2;
-            }
+            randArray[i] = randArray[i] < 6 ? randArray[i] * 2 : randArray[i];
         }
     }
 
@@ -90,15 +84,12 @@ public class gbTask3 {
             for (int j = 0; j < quadroArray[i].length; j++) {
                 if (i == j || i == (quadroArray[i].length - j - 1)) {
                     quadroArray[i][j] = 1;
-//                } else {
-//                    quadroArray[i][j] = 0;
                 }
             }
         }
     }
 
     private static int[] initialValueArray(int len, int initialValue) {   //Task5
-
         int[] array = new int[len];
         Arrays.fill(array, initialValue);
         return array;
